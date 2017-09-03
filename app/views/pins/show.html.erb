@@ -1,0 +1,19 @@
+<div class="container">
+<%= image_tag @pin.image.url %>
+<h1><%= @pin.title %></h1>
+<br>
+
+<p class="description"><%= @pin.description%></p>
+<br>
+
+<p class="user">Poster by <strong><%= @pin.user.name %></p>
+
+<%= link_to "Back", root_path %>
+<% if user_signed_in? %>
+
+<%= link_to "Edit", edit_pin_path %>
+<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"} %>
+
+
+<% end %>
+</div>
