@@ -8,6 +8,13 @@
 
 <p class="user">Poster by <strong><%= @pin.user.name %></p>
 
+<p><%= link_to like_pin_path(@pin), method: :put, class:"btn-default" do %> </p>
+
+<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+<span><%= @pin.get_upvotes.size %></span>
+<% end %>
+
+
 <%= link_to "Back", root_path %>
 <% if user_signed_in? %>
 
